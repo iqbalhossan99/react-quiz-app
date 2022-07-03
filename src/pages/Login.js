@@ -14,7 +14,7 @@ const Login = () => {
             <span>Sign Up</span>
           </Button>
           <div className="info">
-            Create a new account? <a href="/login">Sign Up</a> instead.
+            Create a new account? <a href="/signup">Sign Up</a> instead.
           </div>
         </form>
       </div>

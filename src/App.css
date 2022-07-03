@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons+Outlined");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 :root {
   --bodyBackground: #f2f4f8;
@@ -34,7 +36,7 @@ h4 {
 }
 
 .pageTitle{
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 .info {
