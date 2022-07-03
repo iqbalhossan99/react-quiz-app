@@ -1,9 +1,14 @@
+import "./App.css";
 import Layout from "./components/Layout";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
     <>
-      <Layout />
+      <Layout>
+        {/* <Home /> */}
+        <SignUp />
+      </Layout>
     </>
   );
 }

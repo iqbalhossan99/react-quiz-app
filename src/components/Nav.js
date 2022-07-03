@@ -6,7 +6,7 @@ const Nav = () => {
     <nav className={styles.nav}>
       <ul>
         <li>
-          <a href="index.html" className={styles.brand}>
+          <a href="#" className={styles.brand}>
             <img src={logo} alt="ThriveEdtech Logo" />
           </a>
         </li>
