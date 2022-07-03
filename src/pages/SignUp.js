@@ -11,10 +11,10 @@ const SignUp = () => {
         <Illustration />
         <form style={{ height: "500px" }}>
           <InputText type="text" placeholder="Enter name" required />
-          <InputText type="text" required placeholder="Enter email" s />
-          <InputText type="password" required placeholder="Enter password" />
-          <InputText type="password" required placeholder="Confirm password" />
-          <CheckBox required text="I agree to the Terms &amp; Conditions" />
+          <InputText type="text" placeholder="Enter email" required />
+          <InputText type="password" placeholder="Enter password" required />
+          <InputText type="password" placeholder="Confirm password" required />
+          <CheckBox text="I agree to the Terms &amp; Conditions" required />
           <Button type="submit">
             <span>Sign Up</span>
           </Button>
