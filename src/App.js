@@ -1,8 +1,15 @@
+import "./App.css";
+import Layout from "./components/Layout";
+import SignUp from "./pages/SignUp";
+
 function App() {
   return (
-    <div>
-      <h2>hello</h2>
-    </div>
+    <>
+      <Layout>
+        {/* <Home /> */}
+        <SignUp />
+      </Layout>
+    </>
   );
 }
 
