@@ -14,17 +14,10 @@
     border: 0px;
     margin: .8rem 0; 
     width: 100%;
-  }
-
-  .button span{
-    color: var(--bodyBackground);
-  }
+  } 
   
   .button:hover {
     background: var(--fontPrimary);
     color: #fff;
   }
   
-  .button:hover span {
-    color: #fff;
-  }
