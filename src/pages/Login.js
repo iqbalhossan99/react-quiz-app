@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Illustration from "../components/Illustration";
 import InputText from "../components/InputText";
+
 const Login = () => {
   return (
     <>
@@ -14,7 +16,7 @@ const Login = () => {
             <span>Sign Up</span>
           </Button>
           <div className="info">
-            Create a new account? <a href="/signup">Sign Up</a> instead.
+            Create a new account? <Link to="/signup">Sign Up</Link> instead.
           </div>
         </form>
       </div>

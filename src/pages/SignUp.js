@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import CheckBox from "../components/CheckBox";
 import Illustration from "../components/Illustration";
@@ -9,7 +10,7 @@ const SignUp = () => {
       <h1 className="pageTitle">Create a new account!</h1>
       <div className="column">
         <Illustration />
-        <form style={{ height: "500px" }}>
+        <form>
           <InputText type="text" placeholder="Enter name" required />
           <InputText type="text" placeholder="Enter email" required />
           <InputText type="password" placeholder="Enter password" required />
@@ -19,7 +20,7 @@ const SignUp = () => {
             <span>Sign Up</span>
           </Button>
           <div className="info">
-            Already have an account? <a href="/login">Login</a> instead.
+            Already have an account? <Link to="/login">Login</Link> instead.
           </div>
         </form>
       </div>
