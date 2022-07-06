@@ -110,7 +110,9 @@ const SignUp = () => {
             value={agree}
             onChange={(e) => setAgree(e.target.value)}
           />
-          <Button type="submit" value="Sign Up" />
+          <Button>
+            <span>Sign Up</span>
+          </Button>
           <div className="info">
             Already have an account? <Link to="/login">Login</Link> instead.
           </div>

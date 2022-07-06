@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import Button from "../components/Button";
 import Illustration from "../components/Illustration";
@@ -15,6 +15,9 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   // LOADING
   if (loading) {
@@ -28,7 +31,7 @@ const Login = () => {
     });
   }
 
-  // handle signUp btn
+  // handle Login btn
   const handleLoginBtn = async (e) => {
     e.preventDefault();
 
@@ -38,11 +41,9 @@ const Login = () => {
       title: "You are loged In now!",
       icon: "success",
     });
-  };
 
-  if (user) {
-    navigate("/");
-  }
+    await navigate(from, { replace: true });
+  };
 
   return (
     <>
@@ -64,7 +65,9 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button type="submit" value="Login" />
+          <Button>
+            <span>Log In</span>
+          </Button>
           <div className="info">
             Create a new account? <Link to="/signup">Sign Up</Link> instead.
           </div>

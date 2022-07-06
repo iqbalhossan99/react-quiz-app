@@ -1,10 +1,10 @@
-.quizz{
+.quiz{
     text-align: center;
     margin-bottom: 30px;
 }
 .quizTitle{
     font-size: 50px;
     font-weight: 800;
-    color: var(--successBlue) ;
+    color: var(--bgBlue) ;
     margin-bottom: 10px;
 }

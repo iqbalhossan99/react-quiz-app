@@ -66,7 +66,7 @@
   
   .progress {
     height: 10px;
-    background: var(--successBlue);
+    background: var(--bgBlue);
     border-radius: 20px;
     position: relative;
     transition: width 0.3s ease;
@@ -79,7 +79,7 @@
     position: absolute;
     right: 0;
     border-radius: 100%;
-    background-color: var(--successBlue);
+    background-color: var(--bgBlue);
     transform: translateY(-50%);
     top: 50%;
     cursor: pointer;
@@ -90,7 +90,7 @@
     top: -70px;
     /* left: calc(70% - 65px); */
     width: 130px;
-    background-color: var(--successBlue);
+    background-color: var(--bgBlue);
     color: #fff;
     padding: 0.8rem 1rem;
     border-radius: 7px;
@@ -103,7 +103,7 @@
     content: "";
     width: 15px;
     height: 15px;
-    background-color: var(--successBlue);
+    background-color: var(--bgBlue);
     border-radius: 4px;
     bottom: 0;
     left: 50%;

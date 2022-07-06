@@ -1,7 +1,13 @@
-const CheckBox = ({ className, text, ...rest }) => {
+const CheckBox = ({ className, text, disabled, ...rest }) => {
   return (
-    <label className={className}>
-      <input type="checkbox" {...rest} /> <span>{text}</span>
+    <label {...rest}>
+      <button
+        disabled={disabled}
+        style={{ textAlign: "center" }}
+        className={className}
+      >
+        {text}
+      </button>
     </label>
   );
 };

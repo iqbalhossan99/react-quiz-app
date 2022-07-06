@@ -1,6 +1,6 @@
 .button {
-    background: var(--successBlue);
-    color: var(--bodyBackground);
+    background: var(--bgBlue);
+    color: #fff;
     padding: 0.7rem 1.2rem;
     font-weight: 600;
     font-size: 15px;
@@ -20,4 +20,12 @@
     background: var(--fontPrimary);
     color: #fff;
   }
+
+  
+.button span {
+  color: #fff;
+}
+.button:hover span {
+  color: #fff;
+}
   
