@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import useQuestions from "../hooks/useQuestion";
 import styles from "../styles/Question.module.css";
 import Answers from "./Answers";
-// import ProgressBar from "./ProgressBar";
 
 const Question = () => {
   const [questions, loading] = useQuestions();
@@ -10,7 +9,6 @@ const Question = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const correctAns = questions[currentQuestion]?.correct_answer;
-  console.log(correctAns);
   useEffect(() => {
     if (loading) {
       return;

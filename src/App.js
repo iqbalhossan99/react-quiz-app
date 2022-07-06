@@ -17,7 +17,14 @@ function App() {
       <Layout>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/quiz" element={<Quiz />} />
+          <Route
+            path="/quiz"
+            element={
+              <RequireAuth>
+                <Quiz />
+              </RequireAuth>
+            }
+          />
           <Route
             path="/result"
             element={

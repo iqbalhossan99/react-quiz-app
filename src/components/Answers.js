@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import CheckBox from "../components/CheckBox";
+import auth from "../firebase.init";
 import styles from "../styles/Answer.module.css";
+import Button from "./Button";
 import ProgressBar from "./ProgressBar";
 
 const Answers = ({
@@ -11,12 +15,11 @@ const Answers = ({
   questions,
   setCurrentQuestion,
 }) => {
+  const [user, loading, authError] = useAuthState(auth);
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
-
   const [score, setScore] = useState(0);
 
-  console.log(correctAns);
   const handleSelect = (i) => {
     if (selected === i && selected === correctAns) return `${styles.correct}`;
     else if (selected === i && selected !== correctAns)
@@ -49,9 +52,32 @@ const Answers = ({
     }
   };
 
+  // skip the question
+  const skip = () => {
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion((prevCurrent) => prevCurrent + 1);
+      setSelected();
+    }
+  };
+
   // calculate percentage of progress
   const percentage =
     questions.length > 0 ? ((currentQuestion + 1) / questions.length) * 100 : 0;
+
+  const navigate = useNavigate();
+  // submit quiz
+  const submit = async () => {
+    const participateData = { name: user.displayName, scores: score };
+    // console.log(participateData);
+    localStorage.setItem("participate", JSON.stringify(participateData));
+    swal({
+      title: "Data stored",
+      icon: "success",
+    });
+
+    navigate("/result");
+  };
+
   return (
     <>
       <div className={styles.answers}>
@@ -64,11 +90,15 @@ const Answers = ({
             text={op}
           />
         ))}
+        <Button style={{ width: "5%", background: "#F15454" }} onClick={skip}>
+          <span>Skip</span>
+        </Button>
       </div>
       <ProgressBar
+        submit={submit}
         prevQuestion={prevQuestion}
         nextQuestion={nextQuestion}
-        percentage={percentage}
+        progress={percentage}
       />
     </>
   );

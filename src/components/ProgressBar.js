@@ -1,6 +1,6 @@
 import styles from "../styles/ProgressBar.module.css";
 import Button from "./Button";
-const ProgressBar = ({ prevQuestion, nextQuestion, percentage }) => {
+const ProgressBar = ({ prevQuestion, nextQuestion, progress, submit }) => {
   return (
     <div className={styles.progressBar}>
       <div onClick={prevQuestion} className={styles.backButton}>
@@ -10,13 +10,13 @@ const ProgressBar = ({ prevQuestion, nextQuestion, percentage }) => {
         <div className={styles.rangeBody}>
           <div
             className={styles.progress}
-            style={{ width: `${percentage}%` }}
+            style={{ width: `${progress}%` }}
           ></div>
         </div>
       </div>
 
-      <Button onClick={() => nextQuestion()}>
-        <span>Next Question</span>
+      <Button onClick={progress === 100 ? submit : nextQuestion}>
+        <span>{progress === 100 ? "Submit Quiz" : "Next Question"}</span>
         <span className="material-icons-outlined"> arrow_forward </span>
       </Button>
     </div>

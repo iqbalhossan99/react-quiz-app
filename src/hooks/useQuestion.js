@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-// let qs = [];
+import swal from "sweetalert";
 
 const useQuestions = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [questions, setQuestions] = useState([]);
-  console.log(questions);
   useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10")
+    fetch("https://opentdb.com/api.php?amount=3")
       .then((res) => res.json())
       .then((data) => {
         setError(false);
@@ -17,7 +16,10 @@ const useQuestions = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        swal({
+          title: error?.message,
+          icon: "error",
+        });
         setLoading(false);
         setError(true);
       });

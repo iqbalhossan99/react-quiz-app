@@ -16,6 +16,7 @@ const firebaseConfig = {
   storageBucket: "react-quiz-app-f4505.appspot.com",
   messagingSenderId: "202854434500",
   appId: "1:202854434500:web:1fe1a98e600f955448eb91",
+  databaseURL: "https://react-quiz-app-f4505-default-rtdb.firebaseio.com",
 };
 
 // Initialize Firebase
